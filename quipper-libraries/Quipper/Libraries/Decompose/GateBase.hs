@@ -94,7 +94,7 @@ gatebase_enum = [
   ("trimcontrols", TrimControls)
   ]
   where
-    rs = RandomSource (read "1" :: StdGen)
+    rs = RandomSource (mkStdGen 1)
 
 -- ----------------------------------------------------------------------
 -- * Generic decomposition
