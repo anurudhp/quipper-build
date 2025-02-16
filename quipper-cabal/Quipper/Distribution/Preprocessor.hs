@@ -40,6 +40,7 @@ ppQuipper :: PreProcessor
 ppQuipper =
   PreProcessor {
     platformIndependent = True,
+    ppOrdering = \_ _ -> return,
     runPreProcessor = mkSimplePreProcessor f
     }
   where
