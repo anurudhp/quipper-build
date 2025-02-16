@@ -63,8 +63,8 @@ options =
 
       get_rseed :: String -> Options -> IO Options      
       get_rseed string o =
-        case reads string of
-          [(g, "")] -> return o { opt_rseed = Just g }
+        case parse_int string of
+          Just n -> return o { opt_rseed = Just $ mkStdGen n }
           _ -> optfail ("Invalid random seed -- " ++ string ++ "\n")
 
       help :: Options -> IO Options
