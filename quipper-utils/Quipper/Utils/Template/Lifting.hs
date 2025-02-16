@@ -249,7 +249,7 @@ expTHtoAST (TH.LamE pats exp) =
   clausesToLambda [TH.Clause pats (TH.NormalB exp) []]
 
 expTHtoAST (TH.TupE exps) = do
-  exps' <- mapM expTHtoAST exps
+  exps' <- mapM expTHtoAST (catMaybes exps)
   return (TupE exps')
 
 expTHtoAST (TH.CondE e1 e2 e3) = do
@@ -299,7 +299,7 @@ patTHtoAST (TH.VarP n) = return $ VarP n
 patTHtoAST (TH.TupP pats) = do pats' <- mapM patTHtoAST pats; return $ TupP pats'
 patTHtoAST (TH.WildP) = return WildP
 patTHtoAST (TH.ListP pats) = do pats' <- mapM patTHtoAST pats; return $ ListP pats'
-patTHtoAST (TH.ConP n pats) = do pats' <- mapM patTHtoAST pats; return $ ConP n pats'
+patTHtoAST (TH.ConP n _ pats) = do pats' <- mapM patTHtoAST pats; return $ ConP n pats'
 patTHtoAST (TH.InfixP p1 n p2) = do
   p1' <- patTHtoAST p1
   p2' <- patTHtoAST p2
@@ -380,7 +380,7 @@ patASTtoTH (VarP n)      = TH.VarP n
 patASTtoTH (TupP pats)   = TH.TupP $ map patASTtoTH pats
 patASTtoTH WildP         = TH.WildP
 patASTtoTH (ListP pats)  = TH.ListP $ map patASTtoTH pats
-patASTtoTH (ConP n pats) = TH.ConP n $ map patASTtoTH pats
+patASTtoTH (ConP n pats) = TH.ConP n [] $ map patASTtoTH pats
 
 -- | Upgrade match-constructs.
 matchASTtoTH :: Match -> LiftQ TH.Match
@@ -414,7 +414,7 @@ expASTtoTH (LamE n e) = do
 
 expASTtoTH (TupE exps) = do
   exps' <- mapM expASTtoTH exps
-  return $ TH.TupE exps'
+  return $ TH.TupE (Just <$> exps')
 
 expASTtoTH (CondE e1 e2 e3) = do
   e1' <- expASTtoTH e1
