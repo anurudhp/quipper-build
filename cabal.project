@@ -1,0 +1,13 @@
+packages:
+  easyrender/
+  fixedprec/
+  newsynth/
+  quipper/
+  -- quipper-algorithms/
+  -- quipper-all/
+  quipper-cabal/
+  quipper-demos/
+  quipper-language/
+  quipper-libraries/
+  quipper-tools/
+  quipper-utils/

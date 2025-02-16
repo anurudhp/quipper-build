@@ -1,0 +1,99 @@
+ChangeLog
+
+v0.4.1.0 2024/05/01
+	(2024/03/19) PS1 - fixed a bug in dioph_int_assoc_prime.
+	(2022/01/07) PS1 - added an instance for OmegaRing (Matrix n n a).
+
+v0.4.0.0 2019/06/28
+	(2019/06/27) PS1 - fixed a compiler warning.
+	(2019/06/27) PS1 - use type class synonym to fix compiler warnings
+	about simplifiable class constraints. This changed the type class
+	assumptions of some API functions.
+
+v0.3.0.5 2019/02/23
+	(2019/02/23) PS1 - updated package dependencies to work with Stack.
+	(2019/02/22) PS1 - removed some unused LANGUAGE directives,
+	disabled some compiler warnings.
+
+v0.3.0.4 2018/11/05
+	(2018/11/05) PS1 - fixed some optional compiler warnings.
+	(2018/11/05) PS1 - cabal: moved superdoc to setup-depends.
+	(2018/11/05) PS1 - disabled simplifiable-class-constraints
+	compiler warning.
+
+v0.3.0.3 2016/07/27
+	(2016/07/27) PS1 - relaxed package dependencies to accommodate
+	older versions of ghc and base.
+
+v0.3.0.2 2015/08/15
+	(2015/08/15) PS1 - relaxed dependencies.
+	(2015/08/15) PS1 - added IncoherentInstances to
+	Quantum.Synthesis.LaTeX.
+
+v0.3.0.1 2015/05/15
+	(2015/05/15) PS1 - added a missing source file
+
+v0.3 2015/05/15
+	(2015/05/15) NJR, PS1 - added a new --phase option for
+	approximation up to a phase.
+	(2015/05/15) NJR, PS1 - various bug fixes.
+
+v0.2.0.1 2014/10/08
+	(2014/10/07) PS1 - added Applicative and Functor instances to
+	silence compiler warnings.
+	(2014/10/06) PS1 - updated dependencies for compatibility with
+	base 4.7 and random 1.1.
+	(2014/09/05) PS1 - fixed a bug where the actual T-count was output
+	instead of the lower bound.
+
+v0.2 2014/03/12
+	(2014/03/12) NJR, PS1 - Added the new gridsynth algorithm from
+	N. J. Ross and P. Selinger, "Optimal ancilla-free Clifford+T
+	approximation of z-rotations", arXiv:1403.2975. Added a module
+	GridProblem for solving one- and two-dimensional grid equations,
+	and a module Diophantine for solving a Diophantine equation.
+	Removed the now obsolete Newsynth algorithm, and replaced it by a
+	backward compatibile interface to the new algorithm. New modules
+	GridSynth, QuadraticEquation, and StepComp. Additions and minor
+	improvements to EuclideanDomain, LaTeX, Matrix, and Ring. New
+	executable gridsynth.
+
+v0.1.1.0 2014/02/05
+	(2014/02/04) PS1 - new functions euclid_divides and euclid_associates.
+	(2014/02/04) PS1 - changed 'lobit' and improved its asymptotic
+	efficiency.
+	(2014/02/04) PS1 - fixed a bug in the ShowLaTeX instance of Rational.
+	(2014/02/04) PS1 - added profiling options.
+	(2014/02/03) PS1 - eliminated common subexpressions in gridpoints.
+	(2014/02/03) PS1 - made fromDyadic an operation of the HalfRing
+	class, and improved its efficiency.
+
+v0.1.0.0 2013/12/14
+	(2013/12/13) PS1 - added new rings DComplex and QComplex.
+	Improvements to the ring QOmega.
+	(2013/12/13) PS1 - more uniform naming of rings. Old names
+	DInteger, DReal, EReal, DComplex, EComplex have become ZRootTwo,
+	DRootTwo, QRootTwo, DRComplex, and QRComplex, respectively.
+	(2013/12/13) PS1 - adjusted output syntax to remove Unicode and
+	make output parseable.
+	(2013/12/13) PS1 - refactored as a Cabal package.
+	(2013/12/11) PS1 - removed erroneous Adjoint2 instances for Double
+	and Float.
+	(2013/12/11) PS1 - removed dependency on numbers package, removed
+	Random instance for FixedPrec (this is now in fixedprec package).
+	(2013/12/11) PS1 - added EmptyDataDecls pragma, to keep GHC happy.
+	(2013/12/10) PS1 - removed some unnecessary type class
+	dependencies.
+	(2013/09/25) PS1 - added "alternate" version of multi-qubit
+	synthesis algorithm, using only generators of determinant 1 if
+	possible.
+	(2013/09/25) PS1 - renamed some constructors and deconstructors
+	for matrices.
+
+Release 2013/09/02
+	Released as part of Quipper 0.5.
+	(2013/07/08) PS1 - moved definitions of U2 and SO3 to Matrix.hs.
+	(2013/07/05) PS1 - added RotationDecomposition module.
+
+Release 2013/06/19
+	Initial public release, as part of Quipper 0.4.

@@ -1,0 +1,27 @@
+ChangeLog
+
+v0.2.2.2 2018/11/05
+	(2018/11/05) PS1 - removed ghc-options from *.cabal.
+	(2016/09/17) PS1 - removed redundant type constraints.
+	(2016/09/17) PS1 - removed empty "where" clauses.
+	
+v0.2.2.1 2014/10/08
+	(2014/10/07) PS1 - updated dependencies to permit random 1.1.
+
+v0.2.2.0 2014/03/04
+	(2014/03/04) PS1 - added high-precision quadratic equation solver.
+
+v0.2.1.1 2014/02/05
+	(2014/02/04) PS1 - improved efficiency of square root.
+	(2014/02/04) PS1 - added profiling options.
+
+v0.2.1.0 2013/12/11
+	(2013/12/11) PS1 - added Random instance for FixedPrec.
+
+v0.2 2013/06/30
+	(2013/06/30) PS1 - fixed cabal compilation warnings.
+	(2013/05/29) PS1 - check for non-positive argument in floorlog.
+	This fixes an infinite loop bug.
+
+v0.1 2013/05/27
+	First public release.
