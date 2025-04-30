@@ -1,6 +1,6 @@
 name:           fixedprec
 -- Don't forget to update the ChangeLog
-version:        0.2.2.2
+version:        0.2.2.3
 license:        BSD3
 cabal-version:  >= 1.8
 build-type:	Simple
@@ -21,7 +21,7 @@ extra-source-files: ChangeLog
 
 library
   build-depends:
-    base >= 3 && < 5, random >= 1.0 && < 1.2
+    base >= 3 && < 5, random >= 1.0 && < 1.4
 
   exposed-modules:
     Data.Number.FixedPrec

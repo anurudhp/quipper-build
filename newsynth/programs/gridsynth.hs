@@ -131,8 +131,8 @@ options =
 
       rseed :: String -> Options -> IO Options
       rseed string o =
-        case reads string of
-          [(g, "")] -> return o { opt_rseed = Just g }
+        case parse_int string of
+          Just n -> return o { opt_rseed = Just $ mkStdGen n }
           _ -> optfail ("Invalid random seed -- " ++ string ++ "\n")
 
 -- | Process /argv/-style command line options into an 'Options' structure.
